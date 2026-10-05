@@ -1,22 +1,4 @@
-/*
 
-1. What is args?args (String[] args) is the standard Java parameter 
-containing all raw command-line arguments passed to your application
-when it is run from the terminal or cluster.When you run a Hadoop
-job:Bashhadoop jar myjob.jar MyClass -D mapreduce.job.reduces=2 /user/input /user/output
-args contains: ["-D", "mapreduce.job.reduces=2", "/user/input", "/user/output"]
-
-2. What is files?files is an array containing only the positional arguments
-(the actual file paths) after Hadoop's GenericOptionsParser strips out all 
-Hadoop-specific options (like -D, -files, or -libjars).
-In the example above:GenericOptionsParser(c, args) 
-reads and applies -D mapreduce.job.reduces=2 to the Configuration 
-c..getRemainingArgs() returns 
-what is left over: ["/user/input", "/user/output"].Therefore:files[0] 
-$\rightarrow$ "/user/input" (assigned to input)files[1] $\rightarrow$ "/user/output" 
-(assigned to output)
-
-*/
 
 package pjbl01;
 
