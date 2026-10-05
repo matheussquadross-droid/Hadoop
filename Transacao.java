@@ -1,12 +1,6 @@
 package pjbl01;
 
-/**
- * Representa uma linha do CSV (10 colunas separadas por ';').
- * Centraliza o parsing, a remoção do cabeçalho e o tratamento de dados faltantes.
- *
- * Colunas: 0 Country; 1 Year; 2 Commodity code; 3 Commodity; 4 Flow;
- *          5 Price; 6 Weight; 7 Unit; 8 Amount; 9 Category
- */
+
 
 public class Transacao {
     public static final int COLUNAS = 10;
@@ -23,11 +17,6 @@ public class Transacao {
     public double quantidade = Double.NaN;
     public String categoria = "";
 
-        /**
-     * Devolve null se a linha deve ser descartada:
-     *  - linha vazia, ou com número de colunas diferente de 10 (dado faltante/corrompido);
-     *  - cabeçalho (primeira coluna = "Country").
-     */
 
     public static Transacao parse(String linha) {
 
